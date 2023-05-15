@@ -28,13 +28,13 @@ services:
     restart: always
     volumes:
 #       - ./config/hosts:/etc/hosts:ro
-      - ./docker/app/storage/*:/var/www/app/storage/*:rw,delegated
       - ./docker/app/public:/var/www/app/public:rw,delegated
       - ./docker/app/storage:/var/www/app/storage:rw,delegated
     depends_on:
       - db
     networks:
       - invoiceninja
+    command: chmod -R u+rw,g+rw,o+rw /var/www/app/storage
 #     extra_hosts:
 #       - "in5.localhost:192.168.0.124 " #host and ip
 

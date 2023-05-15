@@ -34,7 +34,7 @@ services:
       - db
     networks:
       - invoiceninja
-    command: chmod -R u+rw,g+rw,o+rw /var/www/app/storage
+    command: sh -c "chmod -R u+rw,g+rw,o+rw /var/www/app/storage && /entrypoint.sh"
 #     extra_hosts:
 #       - "in5.localhost:192.168.0.124 " #host and ip
 

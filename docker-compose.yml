@@ -24,7 +24,7 @@ services:
 
   app:
     image: invoiceninja/invoiceninja:5
-    env_file: env
+    env_file: .env
     restart: always
     volumes:
 #       - ./config/hosts:/etc/hosts:ro
@@ -49,7 +49,7 @@ services:
     ports:
       - "8301:8301"
     restart: always
-    env_file: env
+    env_file: .env
     volumes:
       - ./docker/mysql/data:/var/lib/mysql:rw,delegated
 

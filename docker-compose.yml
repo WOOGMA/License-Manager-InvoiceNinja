@@ -28,7 +28,7 @@ services:
     restart: always
     volumes:
 #       - ./config/hosts:/etc/hosts:ro
-      - ./docker/app/storage/app:/var/www/app/storage/app:rw,delegated
+      - ./docker/app/storage/*:/var/www/app/storage/*:rw,delegated
       - ./docker/app/public:/var/www/app/public:rw,delegated
       - ./docker/app/storage:/var/www/app/storage:rw,delegated
     depends_on:

@@ -2,6 +2,9 @@ ARG PHP_VERSION=8.1
 ARG BAK_STORAGE_PATH=/var/www/app/docker-backup-storage/
 ARG BAK_PUBLIC_PATH=/var/www/app/docker-backup-public/
 
+RUN chmod 755 /app/public
+RUN chown -R 1500:1500 /app
+
 # Get Invoice Ninja and install nodejs packages
 FROM --platform=$BUILDPLATFORM node:lts-alpine as build
 

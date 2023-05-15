@@ -31,7 +31,7 @@ services:
       - ./docker/app/public/framework:/var/www/app/public/framework:rw,delegated
       - ./docker/app/public:/var/www/app/public:rw,delegated
       - ./docker/app/storage:/var/www/app/storage:rw,delegated
-    command: sh -c "sudo chown -R 1500:1500 docker/app && chmod 775 docker/app/public"
+    command: sh -c "sudo chown -R 1500:1500 docker/app && chmod 775 docker/app/public && chmod 775 docker/app/public"
     depends_on:
       - db
     networks:

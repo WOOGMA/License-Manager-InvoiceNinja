@@ -19,23 +19,23 @@ services:
       #- "443:443"
     networks:
       - invoiceninja
-    extra_hosts:
-      - "in5.localhost:192.168.0.124 " #host and ip
+#     extra_hosts:
+#       - "in5.localhost:192.168.0.124 " #host and ip
 
   app:
     image: invoiceninja/invoiceninja:5
     env_file: env
     restart: always
     volumes:
-      - ./config/hosts:/etc/hosts:ro
+#       - ./config/hosts:/etc/hosts:ro
       - ./docker/app/public:/var/www/app/public:rw,delegated
       - ./docker/app/storage:/var/www/app/storage:rw,delegated
     depends_on:
       - db
     networks:
       - invoiceninja
-    extra_hosts:
-      - "in5.localhost:192.168.0.124 " #host and ip
+#     extra_hosts:
+#       - "in5.localhost:192.168.0.124 " #host and ip
 
   db:
     image: mysql:8
@@ -58,8 +58,8 @@ services:
       #- ./config/mysql/backup-script:/etc/cron.monthly/monthly:ro
     networks:
       - invoiceninja
-    extra_hosts:
-      - "in5.localhost:192.168.0.124 " #host and ip
+#     extra_hosts:
+#       - "in5.localhost:192.168.0.124 " #host and ip
 
   # THIS IS ONLY A VALID CONFIGURATION FOR IN 4. DO NOT USE FOR IN 5.
   # cron:

@@ -27,7 +27,7 @@ services:
     env_file: env
     restart: always
     volumes:
-#       - ./config/hosts:/etc/hosts:ro
+      - ./config/hosts:/etc/hosts:ro
       - ./docker/app/public/framework:/var/www/app/public/framework:rw,delegated
       - ./docker/app/public:/var/www/app/public:rw,delegated
       - ./docker/app/storage:/var/www/app/storage:rw,delegated

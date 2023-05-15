@@ -31,7 +31,7 @@ services:
       - ./docker/app/public/framework:/var/www/app/public/framework:rw,delegated
       - ./docker/app/public:/var/www/app/public:rw,delegated
       - ./docker/app/storage:/var/www/app/storage:rw,delegated
-    command: bash -c "chmod 777 docker/app/public && sudo chown -R 1500:1500 docker/app"
+    command: bash -c "sudo mkdir -p /var/www/app/storage/framework && chmod 777 docker/app/public && sudo chown -R 1500:1500 docker/app"
     depends_on:
       - db
     networks:
